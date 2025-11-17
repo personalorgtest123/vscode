@@ -1,4 +1,8 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu
+
+RUN addgroup --system <group>
+RUN adduser --system <user> --ingroup <group>
+USER <user>:<group>
 MAINTAINER Microsoft
 
 RUN apt-get install -y software-properties-common python
